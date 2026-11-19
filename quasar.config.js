@@ -1,3 +1,4 @@
+
 import { configure } from 'quasar/wrappers'
 
 export default configure((/* ctx */) => {
@@ -14,7 +15,9 @@ export default configure((/* ctx */) => {
     ],
 
     build: {
-      target: { browser: ['es2022', 'firefox115', 'chrome115', 'safari14'] },
+      target: {
+        browser: ['es2022', 'firefox115', 'chrome115', 'safari14']
+      },
       vueRouterMode: 'hash',
       publicPath: '/TyraArends.github.io/',
       vitePlugins: []
@@ -22,8 +25,6 @@ export default configure((/* ctx */) => {
 
     devServer: {
       open: true,
-      // Avoid clash with another process often bound to 127.0.0.1:9000 (e.g. Python),
-      // which makes http://localhost:9000/ return ERR_INVALID_HTTP_RESPONSE in the browser.
       port: 9100,
       strictPort: false
     },
@@ -32,16 +33,15 @@ export default configure((/* ctx */) => {
       config: {
         dark: false,
         brand: {
-          primary: '#426F8C',      // Ocean blue
-          secondary: '#D69AA6',    // Dusty pink
-          accent: '#8EADBF',       // Soft blue
-          dark: '#173B57',         // Deep navy
-          'dark-page': '#FAF7F5',  // Warm ivory
+          primary: '#426F8C',
+          secondary: '#D69AA6',
+          accent: '#8EADBF',
+          dark: '#173B57',
+          'dark-page': '#FAF7F5',
           positive: '#426F8C',
           negative: '#C77991',
           info: '#8EADBF',
           warning: '#D69AA6'
-        }
         }
       },
       plugins: ['Dialog', 'Scroll']
