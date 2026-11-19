@@ -1,4 +1,4 @@
-
+// Updated Quasar configuration
 import { configure } from 'quasar/wrappers'
 
 export default configure((/* ctx */) => {
