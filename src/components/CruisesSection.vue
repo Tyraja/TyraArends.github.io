@@ -1,3 +1,4 @@
+vue
 <template>
   <section id="cruises" class="section-block section-light">
     <div class="site-wrap">
@@ -114,7 +115,7 @@ function openPhoto (cruise) {
 .cruise-total {
   margin: -0.5rem 0 1.5rem;
   font-size: 0.8rem;
-  color: #5c736e;
+  color: #71869a;
 }
 
 .cruise-list {
@@ -127,10 +128,10 @@ function openPhoto (cruise) {
   grid-template-columns: minmax(7rem, 9rem) 1fr;
   gap: 1rem 1.75rem;
   padding: 1.5rem 0;
-  border-top: 1px solid rgba(12, 44, 52, 0.1);
+  border-top: 1px solid rgba(23, 59, 87, 0.1);
 
   &:last-child {
-    border-bottom: 1px solid rgba(12, 44, 52, 0.1);
+    border-bottom: 1px solid rgba(23, 59, 87, 0.1);
   }
 
   @media (max-width: 600px) {
@@ -141,7 +142,7 @@ function openPhoto (cruise) {
 
 .cruise-meta {
   font-size: 0.76rem;
-  color: #5c736e;
+  color: #71869a;
   padding-top: 0.35rem;
   display: flex;
   flex-direction: column;
@@ -152,21 +153,21 @@ function openPhoto (cruise) {
   font-size: clamp(1.1rem, 2.2vw, 1.35rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: #0c2c34;
+  color: #173b57;
   margin: 0 0 0.5rem;
   line-height: 1.25;
 }
 
 .cruise-sub {
   font-weight: 500;
-  color: #2a7a6e;
+  color: #c77991;
 }
 
 .cruise-desc {
   margin: 0;
   font-size: 0.98rem;
   line-height: 1.7;
-  color: #3d524e;
+  color: #465c70;
   max-width: 46rem;
 }
 
@@ -175,10 +176,10 @@ function openPhoto (cruise) {
   display: block;
   margin-top: 1rem;
   padding: 0;
-  border: 1px solid rgba(12, 44, 52, 0.12);
+  border: 1px solid rgba(23, 59, 87, 0.12);
   border-radius: 10px;
   overflow: hidden;
-  background: #eef4f2;
+  background: #f1f5f8;
   max-width: min(100%, 22rem);
   cursor: pointer;
   text-align: left;
@@ -192,9 +193,9 @@ function openPhoto (cruise) {
   }
 
   &:hover {
-    border-color: rgba(42, 122, 110, 0.45);
+    border-color: rgba(199, 121, 145, 0.55);
     transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(12, 44, 52, 0.12);
+    box-shadow: 0 10px 28px rgba(23, 59, 87, 0.12);
   }
 }
 
@@ -202,16 +203,16 @@ function openPhoto (cruise) {
   display: block;
   padding: 0.55rem 0.75rem;
   font-size: 0.72rem;
-  color: #5c736e;
-  background: rgba(255, 255, 255, 0.65);
+  color: #71869a;
+  background: rgba(255, 255, 255, 0.75);
 }
 
 .expand-btn {
   display: inline-flex;
   align-items: center;
-  border: 1px solid rgba(42, 122, 110, 0.35);
+  border: 1px solid rgba(199, 121, 145, 0.45);
   background: transparent;
-  color: #2a7a6e;
+  color: #c77991;
   border-radius: 6px;
   padding: 10px 18px;
   font-size: 0.8rem;
@@ -219,13 +220,13 @@ function openPhoto (cruise) {
   transition: all 0.2s ease;
 
   &:hover {
-    border-color: #2a7a6e;
-    background: rgba(42, 122, 110, 0.08);
+    border-color: #c77991;
+    background: rgba(199, 121, 145, 0.09);
   }
 }
 
 .photo-backdrop {
-  background: rgba(12, 44, 52, 0.96);
+  background: rgba(23, 59, 87, 0.97);
   width: 100%;
   height: 100%;
   position: relative;
