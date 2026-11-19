@@ -13,13 +13,13 @@ export const personal = {
   scholar: '',
   tagline: 'M.S. student, Biological Oceanography, University of Hawaiʻi at Mānoa',
   summary:
-    'Interested in deep-sea fish ecology and the open-ocean water column — vertical profiling, micronekton and macroplankton community composition, and shipboard acoustics. M.S. student in the Deep Sea Fish Ecology Lab.',
+    'Interested in deep-sea fish ecology in the pelagic (Mid water). Current research focuses on micronekton and macroplankton community composition and active acoustics. M.S. student in the Deep Sea Fish Ecology Lab.',
   contactBlurb:
     'Email is the best way to reach me. My CV and research are linked below.',
   about: [
-    'I am an M.S. student in <strong>Biological Oceanography</strong> at the University of Hawaiʻi at Mānoa and a <strong>Hauʻoli Mau Loa Fellow</strong> in the Deep Sea Fish Ecology Lab, advised by Jeff Drazen. I completed a B.S. in <strong>Global Environmental Science</strong> (Honors, cum laude) with a computer programming pathway.',
-    'My research uses a novel water column profiler to characterize macroplankton and micronekton community composition and biomass across depth. I have spent <strong>69 days at sea</strong> on profiler testing cruises, the Hawaii Ocean Timeseries, and the 45-day Kermadec Trench Ventilation Cruise (hadal profiler, eDNA, and shipboard acoustics).',
-    'Earlier work at the Hawaiʻi Institute of Marine Biology focused on the demographic structure and species verification of the coral <em>Leptastrea purpurea</em> in Kāneohe Bay.'
+    'I am an M.S. student in <strong>Biological Oceanography</strong> at the University of Hawaiʻi at Mānoa and a <strong>Hauʻoli Mau Loa Fellow</strong> in the Deep Sea Fish Ecology Lab, advised by Dr. Jeff Drazen. I completed a B.S. in <strong>Global Environmental Science</strong> (Honors, cum laude) with a computer programming pathway.',
+    'My research uses a novel water column profiler to characterize macroplankton and micronekton community composition and biomass from the mesopelagic to bathypelagic depths. I have spent <strong>69 days at sea</strong> on profiler testing cruises, the Hawaii Ocean Timeseries, and the 45-day Kermadec Trench Ventilation Cruise.',
+    'Earlier work at the Hawaiʻi Institute of Marine Biology focused on the demographic structure and species verification of the coral <em>Leptastrea purpurea</em> in Kāneohe Bay, as well as coral husbandry'
   ],
   aboutStats: [
     { value: '69', label: 'Days at sea' },
@@ -34,17 +34,17 @@ export const experienceSettings = {
 
 /** How many items show before “Show all” in Publications / Projects */
 export const publicationSettings = {
-  journalsCollapsedCount: 4,
-  postersCollapsedCount: 3
+  journalsCollapsedCount: 2,
+  postersCollapsedCount: 2
 }
 
 export const projectSettings = {
-  collapsedCount: 4
+  collapsedCount: 2
 }
 
 /** How many cruises show before “Show all” */
 export const cruiseSettings = {
-  collapsedCount: 4
+  collapsedCount: 2
 }
 
 export const experience = [
@@ -97,9 +97,9 @@ export const projects = [
     title: 'Hadal water column profiler',
     subtitle: 'Pelagic macroplankton and micronekton',
     description:
-      'Distribution and community structure of pelagic macroplankton and micronekton from vertical profiles collected with a novel water column profiler in Hawaiʻi. Manuscript in preparation.',
+      'Distribution and community structure of pelagic macroplankton and micronekton from vertical profiles collected with a novel water column profiler in Offshore of Oahus Leeward coast. Manuscript in preparation.',
     cites: ['J1'],
-    tags: ['Water column profiler', 'Micronekton', 'Macroplankton', 'Community structure'],
+    tags: ['Pelagic Ecology', 'Micronekton', 'Macroplankton', 'Community structure'],
     dates: '2025 \u2014 Present'
   },
   {
@@ -124,7 +124,7 @@ export const cruises = [
     days: 45,
     vessel: 'R/V Thomas G. Thompson',
     description:
-      'University of Hawaiʻi, University of Rhode Island, and Woods Hole Oceanographic Institution. Hadal water column profiler, eDNA, and shipboard acoustics.',
+      'This cruise set out to understand the ventalation propperties of the Kermadec trench offshore of New Zealand. This included collaborations from the University of Hawaiʻi, University of Rhode Island, and Woods Hole Oceanographic Institution. My role on this cruise was to help prepare the Hadal water column profiler, collect and filter Seawater for eDNA, and collect shipboard acoustics scientific acoustics from an EK80 system across 5 independant frequencies. I am hoping to use the data collected during my PhD',
     tags: ['Hadal', 'eDNA', 'Acoustics'],
     image: 'kermadec_2025.jpg'
   },
@@ -132,7 +132,7 @@ export const cruises = [
     title: 'Hadal Water Column Profiler Testing Cruise',
     year: '2025',
     days: 3,
-    description: 'SOEST student cruise.',
+    description: 'This was a HWCP Testing cruise as well as a SOEST Student cruise. Here, I helped prepare and launch the HWCP and opperate the CTD rosette. The Deep Sea Fish Ecology Lab used a micronekton net to sample mesopelagic Micronekton - which meant that i got to hold some of the critters that I have been studying through my M.S, like this cool sergestid shrimp! I also got to watch him produce a bioluminescent ooze. So Cool!',
     tags: ['Profiler testing'],
     image: 'testing_2025.jpg'
   },
@@ -140,7 +140,7 @@ export const cruises = [
     title: 'Hadal Water Column Profiler Testing Cruise',
     year: '2024',
     days: 4,
-    description: 'Research Experience for Undergraduates.',
+    description: 'HWCP Testing cruise & Research Experience for Undergraduates. I joined the HWCP team as a student volunteer and got to meet REU students from across the USA who joined for an at sea experience! ',
     tags: ['Profiler testing', 'REU'],
     image: 'testing_2024_b.jpg'
   },
@@ -148,7 +148,7 @@ export const cruises = [
     title: 'Hadal Water Column Profiler Testing Cruise',
     year: '2024',
     days: 3,
-    description: 'Research Experience for Undergraduates.',
+    description: 'I helped prepare and launch the HWCP and opperate the CTD rosette.',
     tags: ['Profiler testing', 'REU'],
     image: 'testing_2024_a.jpg'
   },
@@ -156,7 +156,7 @@ export const cruises = [
     title: 'Hadal Water Column Profiler Testing Cruise',
     year: '2023',
     days: 4,
-    description: 'SOEST student cruise.',
+    description: 'I helped prepare and launch the HWCP and opperate the CTD rosette, and work with other undergraduate students aboard the SOEST student cruise.',
     tags: ['Profiler testing'],
     image: 'testing_2023_b.jpg'
   },
@@ -164,7 +164,7 @@ export const cruises = [
     title: 'Hadal Water Column Profiler Testing Cruise',
     year: '2023',
     days: 3,
-    description: 'Profiler testing cruise.',
+    description: 'I helped prepare and launch the HWCP and opperate the CTD rosette.',
     tags: ['Profiler testing'],
     image: 'testing_2023_a.jpg'
   },
@@ -172,7 +172,7 @@ export const cruises = [
     title: 'Hawaii Ocean Timeseries',
     year: '2023',
     days: 7,
-    description: 'Volunteer participant on a Hawaii Ocean Timeseries research cruise.',
+    description: 'This was my very first research cruise experience as a volunteer participant on a Hawaii Ocean Timeseries research cruise. I observed CTD opperation, net tow, and even got to fish (and catch!) MahiMahi. What i remember most fondly is spending hours and hours admiring live zooplankton through microscopes ',
     tags: ['HOT', 'Time series'],
     image: 'hot_2023.jpg'
   }
@@ -206,12 +206,12 @@ export const educationDegrees = [
 export const publicationsJournals = [
   {
     cite: 'J1',
-    short: 'Arends et al., in prep',
+    short: 'MANUSCRIPT IN PREP',
     title:
       'Vertical Profiles of Macroplankton and Micronekton Community Composition and Biomass from a Novel Water Column Profiler in Hawaiʻi',
     authors: 'Tyra Arends, Glenn Carter, and Jeffrey Drazen',
     venue: 'In preparation',
-    date: '2026',
+    date: 'coming soon',
     tags: ['Midwater ecology', 'Active acoustics']
   }
 ]
