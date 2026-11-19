@@ -32,15 +32,16 @@ export default configure((/* ctx */) => {
       config: {
         dark: false,
         brand: {
-          primary: '#2a7a6e',
-          secondary: '#c4a574',
-          accent: '#1a6fb5',
-          dark: '#0c2c34',
-          'dark-page': '#eef4f2',
-          positive: '#2a7a6e',
-          negative: '#b54a3a',
-          info: '#1a6fb5',
-          warning: '#c4a574'
+          primary: '#426F8C',      // Ocean blue
+          secondary: '#D69AA6',    // Dusty pink
+          accent: '#8EADBF',       // Soft blue
+          dark: '#173B57',         // Deep navy
+          'dark-page': '#FAF7F5',  // Warm ivory
+          positive: '#426F8C',
+          negative: '#C77991',
+          info: '#8EADBF',
+          warning: '#D69AA6'
+        }
         }
       },
       plugins: ['Dialog', 'Scroll']
