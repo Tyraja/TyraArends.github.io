@@ -181,14 +181,14 @@ function highlightSelf (authors) {
   font-size: 0.78rem;
   padding: 8px 14px;
   border-radius: 6px;
-  border: 1px solid rgba(12, 44, 52, 0.14);
-  color: #0c2c34 !important;
+  border: 1px solid rgba(66, 111, 140, 0.25);
+  color: #173B57 !important;
   background: #fff;
   transition: all 0.2s ease;
 
   &:hover {
-    border-color: #2a7a6e;
-    color: #2a7a6e !important;
+    border-color: #D69AA6;
+    color: #C77991 !important;
   }
 }
 
@@ -197,17 +197,17 @@ function highlightSelf (authors) {
   line-height: 1.7;
   max-width: 40rem;
   margin: 0 0 2rem;
-  color: #4a605b;
+  color: #526575;
 }
 
 .pubs-subhead {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #0c2c34;
+  color: #173B57;
   letter-spacing: -0.02em;
   margin: 0 0 1.15rem;
   padding-bottom: 0.4rem;
-  border-bottom: 2px solid rgba(42, 122, 110, 0.35);
+  border-bottom: 2px solid rgba(214, 154, 166, 0.65);
   display: inline-block;
 }
 
@@ -217,17 +217,17 @@ function highlightSelf (authors) {
   gap: 1.35rem;
   align-items: start;
   background: #fff;
-  border: 1px solid rgba(12, 44, 52, 0.08);
+  border: 1px solid rgba(23, 59, 87, 0.09);
   border-radius: 4px 14px 14px 4px;
-  border-left: 4px solid #2a7a6e;
+  border-left: 4px solid #426F8C;
   padding: 1.35rem 1.4rem;
   margin-bottom: 1.1rem;
-  box-shadow: 0 6px 22px rgba(12, 44, 52, 0.05);
+  box-shadow: 0 6px 22px rgba(23, 59, 87, 0.06);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(12, 44, 52, 0.09);
+    box-shadow: 0 12px 32px rgba(23, 59, 87, 0.11);
   }
 
   @media (max-width: 700px) {
@@ -240,7 +240,7 @@ function highlightSelf (authors) {
   height: 112px;
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid rgba(12, 44, 52, 0.08);
+  border: 1px solid rgba(23, 59, 87, 0.1);
 
   img {
     width: 100%;
@@ -263,22 +263,22 @@ function highlightSelf (authors) {
   font-weight: 600;
   padding: 2px 8px;
   border-radius: 4px;
-  background: rgba(42, 122, 110, 0.12);
-  color: #2a7a6e;
+  background: rgba(214, 154, 166, 0.2);
+  color: #A85470;
 }
 
 .venue-pill {
   font-size: 0.72rem;
   font-weight: 600;
-  color: #0c2c34;
-  background: rgba(12, 44, 52, 0.06);
+  color: #173B57;
+  background: rgba(142, 173, 191, 0.2);
   padding: 2px 9px;
   border-radius: 999px;
 }
 
 .pub-date {
   font-size: 0.74rem;
-  color: #5c736e;
+  color: #667987;
 }
 
 .journal-title {
@@ -286,18 +286,18 @@ function highlightSelf (authors) {
   font-weight: 700;
   line-height: 1.3;
   letter-spacing: -0.02em;
-  color: #0c2c34;
+  color: #173B57;
   margin: 0 0 0.55rem;
 }
 
 .journal-authors {
   font-size: 0.92rem;
   line-height: 1.65;
-  color: #4a605b;
+  color: #526575;
   margin: 0;
 
   :deep(.self-author) {
-    color: #0c2c34;
+    color: #426F8C;
     font-weight: 700;
   }
 }
@@ -310,17 +310,18 @@ function highlightSelf (authors) {
 
 .poster-card {
   background: #fff;
-  border: 1px solid rgba(12, 44, 52, 0.08);
+  border: 1px solid rgba(23, 59, 87, 0.09);
   border-radius: 12px;
   padding: 1.05rem 1.1rem;
   display: flex;
   gap: 0.85rem;
   align-items: flex-start;
-  box-shadow: 0 4px 16px rgba(12, 44, 52, 0.04);
-  transition: transform 0.2s ease;
+  box-shadow: 0 4px 16px rgba(23, 59, 87, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 
   &:hover {
     transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(23, 59, 87, 0.09);
   }
 
   &:not(.has-thumb) {
@@ -334,7 +335,7 @@ function highlightSelf (authors) {
   border-radius: 7px;
   overflow: hidden;
   flex-shrink: 0;
-  border: 1px solid rgba(12, 44, 52, 0.08);
+  border: 1px solid rgba(23, 59, 87, 0.1);
 
   img {
     width: 100%;
@@ -345,7 +346,7 @@ function highlightSelf (authors) {
 }
 
 .cite-inline {
-  color: #2a7a6e;
+  color: #C77991;
   font-weight: 600;
   margin-bottom: 0.2rem;
 }
@@ -355,14 +356,14 @@ function highlightSelf (authors) {
   font-size: 0.95rem;
   font-weight: 650;
   line-height: 1.35;
-  color: #0c2c34;
+  color: #173B57;
   margin: 0 0 0.3rem;
 }
 
 .poster-venue {
   font-size: 0.72rem;
   line-height: 1.5;
-  color: #5c736e;
+  color: #667987;
   margin: 0;
 }
 
@@ -390,22 +391,22 @@ function highlightSelf (authors) {
 
 @keyframes pubFlash {
   0% {
-    box-shadow: 0 0 0 0 rgba(42, 122, 110, 0.55);
+    box-shadow: 0 0 0 0 rgba(214, 154, 166, 0.55);
   }
   35% {
-    box-shadow: 0 0 0 4px rgba(42, 122, 110, 0.35), 0 10px 28px rgba(12, 44, 52, 0.12);
+    box-shadow: 0 0 0 4px rgba(214, 154, 166, 0.35), 0 10px 28px rgba(23, 59, 87, 0.12);
   }
   100% {
-    box-shadow: 0 6px 22px rgba(12, 44, 52, 0.05);
+    box-shadow: 0 6px 22px rgba(23, 59, 87, 0.05);
   }
 }
 
 .expand-btn {
   display: inline-flex;
   align-items: center;
-  border: 1px solid rgba(42, 122, 110, 0.35);
+  border: 1px solid rgba(214, 154, 166, 0.6);
   background: transparent;
-  color: #2a7a6e;
+  color: #A85470;
   border-radius: 6px;
   padding: 10px 18px;
   font-size: 0.8rem;
@@ -413,8 +414,8 @@ function highlightSelf (authors) {
   transition: all 0.2s ease;
 
   &:hover {
-    border-color: #2a7a6e;
-    background: rgba(42, 122, 110, 0.08);
+    border-color: #C77991;
+    background: rgba(214, 154, 166, 0.12);
   }
 }
 </style>
