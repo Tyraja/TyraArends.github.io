@@ -240,4 +240,102 @@ export const publicationsPosters = [
     cite: 'C4',
     short: 'Arends, 2024',
     title: 'Leptastrea purpurea Demographic Structure in Kāneohe Bay',
-    venue: 'HIMB Scholarship Symposium, Oʻahu ·
+    venue: 'HIMB Scholarship Symposium, Oʻahu · Oral, 2024'
+  },
+  {
+    cite: 'C5',
+    short: 'Arends, 2024',
+    title: 'Leptastrea purpurea Demographic Structure',
+    venue: 'Reef Futures Global Symposium, Cancún, Mexico · Lightning talk, 2024'
+  },
+  {
+    cite: 'C6',
+    short: 'Arends, 2024',
+    title: 'Leptastrea purpurea Species Verification in Kāneohe Bay',
+    venue: 'Hawaiʻi Conservation Conference, Oʻahu · Lightning talk, 2024'
+  },
+  {
+    cite: 'C7',
+    short: 'Arends, 2024',
+    title: 'Leptastrea purpurea Demographic Structure in Kāneohe Bay',
+    venue: 'Hawaiʻi Conservation Conference, Oʻahu · Poster, 2024'
+  },
+  {
+    cite: 'C8',
+    short: 'Arends, 2024',
+    title: 'Leptastrea purpurea Demographic Structure in Kāneohe Bay',
+    venue: '48th Annual Albert L. Tester Memorial Symposium, Oʻahu · Poster, 2024'
+  },
+  {
+    cite: 'C9',
+    short: 'Arends, 2024',
+    title: 'Leptastrea purpurea Demographic Structure in Kāneohe Bay',
+    venue: 'Dept. of Oceanography BUOYs, Oʻahu · Poster, 2024'
+  }
+]
+
+/** Lookup for employment / project cite chips */
+export const publicationsByCite = Object.fromEntries(
+  [...publicationsJournals, ...publicationsPosters].map((p) => [p.cite, p])
+)
+
+export function pubAnchorId (cite) {
+  return `pub-${cite}`
+}
+
+export function normalizeBullet (bullet) {
+  if (typeof bullet === 'string') return { text: bullet, cites: [] }
+  return { text: bullet.text || '', cites: bullet.cites || [] }
+}
+
+/** Optional leadership block — empty bullets hides the card */
+export const leadership = {
+  title: '',
+  org: '',
+  dates: '',
+  bullets: []
+}
+
+export const honorsList = [
+  {
+    title: 'Hauʻoli Mau Loa M.S. Fellowship',
+    context: '2-year tuition waiver, graduate salary, and travel funds',
+    year: '2025\u201327'
+  },
+  {
+    title: 'Outstanding Undergraduate Honors Thesis Award',
+    context: 'University of Hawaiʻi at Mānoa',
+    year: '2025'
+  },
+  {
+    title: 'SOEST Dean\u2019s Scholarship',
+    context: 'University of Hawaiʻi at Mānoa',
+    year: '2024\u201325'
+  },
+  {
+    title: 'Emerging Student Scholarship (×2)',
+    context: 'Hawaiʻi Conservation Conference',
+    year: '2024\u201325'
+  },
+  {
+    title: 'Undergraduate Research Opportunities Program Funding (×2)',
+    context: 'University of Hawaiʻi at Mānoa',
+    year: '2023\u201324'
+  },
+  {
+    title: 'Dean\u2019s Honor Roll',
+    context: 'University of Hawaiʻi at Mānoa',
+    year: '2022\u201325'
+  }
+]
+
+export const affiliations = []
+
+export const skills = {
+  Programming: ['Python', 'R', 'MATLAB', 'Computer vision'],
+  Field: ['PADI Open Water Diver', 'CTD & rosette operations', 'Plankton tows', 'Freediving', 'Coral husbandry'],
+  Lab: ['DNA extraction', 'PCR', 'RAD-seq library prep (2bRAD, EzRAD)', 'UVR DNA damage assay'],
+  Languages: ['English (native)', 'French (working proficiency)']
+}
+
+/* Gallery: `src/assets/media/gallery/` — see `src/data/media.js` */
