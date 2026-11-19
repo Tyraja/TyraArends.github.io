@@ -16,7 +16,7 @@ export default configure((/* ctx */) => {
     build: {
       target: { browser: ['es2022', 'firefox115', 'chrome115', 'safari14'] },
       vueRouterMode: 'hash',
-      publicPath: '/',
+      publicPath: '/TyraArends.github.io/',
       vitePlugins: []
     },
 
