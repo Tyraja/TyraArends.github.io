@@ -1,6 +1,6 @@
-# jnicolow.github.io
+# TyraArends.github.io
 
-Personal portfolio site (Vue + Quasar). Live at [jnicolow.github.io](https://jnicolow.github.io/).
+Personal portfolio site (Vue + Quasar). Live at [TyraArends.github.io](https://TyraArends.github.io/).
 
 ## Local
 
