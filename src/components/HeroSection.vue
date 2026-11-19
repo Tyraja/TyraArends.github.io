@@ -1,3 +1,4 @@
+
 <template>
   <section id="hero" class="hero-section">
     <div class="hero-media" aria-hidden="true">
@@ -28,10 +29,19 @@
       </p>
 
       <div class="hero-actions">
-        <button type="button" class="btn-solid" @click="scrollTo('publications')">
+        <button
+          type="button"
+          class="btn-solid"
+          @click="scrollTo('publications')"
+        >
           Publications
         </button>
-        <button type="button" class="btn-ghost" @click="scrollTo('experience')">
+
+        <button
+          type="button"
+          class="btn-ghost"
+          @click="scrollTo('experience')"
+        >
           Employment
         </button>
       </div>
@@ -56,7 +66,7 @@ function scrollTo (id) {
   align-items: flex-end;
   padding: 7rem 0 4.5rem;
   overflow: hidden;
-  color: #f4faf8;
+  color: #FAF7F5;
 }
 
 .hero-media {
@@ -71,9 +81,10 @@ function scrollTo (id) {
   width: 100%;
   height: 100%;
   object-fit: cover;
+
   /*
-   * Keep the subject on the right. Vertically, crop top:bottom ≈ 2:1
-   * (object-position y% = fraction of overflow taken from the top).
+   * Keep the subject on the right.
+   * Preserve the original vertical crop.
    */
   object-position: right 66.666%;
 }
@@ -82,8 +93,17 @@ function scrollTo (id) {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(105deg, rgba(12, 44, 52, 0.88) 0%, rgba(12, 44, 52, 0.55) 48%, rgba(12, 44, 52, 0.28) 100%),
-    linear-gradient(0deg, rgba(12, 44, 52, 0.7) 0%, transparent 50%);
+    linear-gradient(
+      105deg,
+      rgba(23, 59, 87, 0.92) 0%,
+      rgba(23, 59, 87, 0.65) 48%,
+      rgba(23, 59, 87, 0.3) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(23, 59, 87, 0.78) 0%,
+      transparent 50%
+    );
 }
 
 .hero-content {
@@ -98,7 +118,7 @@ function scrollTo (id) {
   font-size: 0.78rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #c4a574;
+  color: #E8B7C0;
   margin: 0 0 1rem;
 }
 
@@ -108,7 +128,7 @@ function scrollTo (id) {
   letter-spacing: -0.04em;
   line-height: 0.98;
   margin: 0 0 0.85rem;
-  color: #f7fbf9;
+  color: #FFFFFF;
 }
 
 .hero-tagline {
@@ -116,7 +136,7 @@ function scrollTo (id) {
   font-size: clamp(1.05rem, 2.4vw, 1.3rem);
   font-weight: 500;
   line-height: 1.35;
-  color: rgba(244, 250, 248, 0.9);
+  color: rgba(250, 247, 245, 0.94);
   margin: 0 0 1.1rem;
   max-width: 34rem;
 }
@@ -124,7 +144,7 @@ function scrollTo (id) {
 .hero-summary {
   font-size: 1.02rem;
   line-height: 1.7;
-  color: rgba(238, 244, 242, 0.82);
+  color: rgba(250, 247, 245, 0.85);
   margin: 0 0 2rem;
   max-width: 36rem;
 }
@@ -143,28 +163,32 @@ function scrollTo (id) {
   border-radius: 6px;
   padding: 12px 22px;
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .btn-solid {
-  border: none;
-  background: #2a7a6e;
-  color: #f4faf8;
+  border: 1px solid #D69AA6;
+  background: #D69AA6;
+  color: #173B57;
 
   &:hover {
-    background: #329184;
+    background: #E8B7C0;
+    border-color: #E8B7C0;
     transform: translateY(-2px);
   }
 }
 
 .btn-ghost {
-  border: 1px solid rgba(244, 250, 248, 0.35);
-  background: transparent;
-  color: #f4faf8;
+  border: 1px solid rgba(250, 247, 245, 0.55);
+  background: rgba(23, 59, 87, 0.2);
+  color: #FFFFFF;
 
   &:hover {
-    border-color: rgba(196, 165, 116, 0.7);
-    color: #c4a574;
+    border-color: #E8B7C0;
+    color: #E8B7C0;
     transform: translateY(-2px);
   }
 }
