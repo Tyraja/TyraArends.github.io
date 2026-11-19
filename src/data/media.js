@@ -1,5 +1,5 @@
 /**
- * Site images: `src/assets/media/{hero,about,gallery,pubs,projects}/` (see globs below).
+ * Site images: `src/assets/media/{hero,about,gallery,pubs,projects,cruises}/` (see globs below).
  * CV PDF: `src/assets/media/cv/` — imported once as `cvPdfUrl`.
  * Each import.meta.glob MUST use a string literal (Vite limitation).
  */
@@ -90,6 +90,18 @@ const projectModules = {
   ...import.meta.glob('../assets/media/projects/*.WEBP', { eager: true, import: 'default' })
 }
 
+/** Optional cruise photos — basename only in resume.js */
+const cruiseModules = {
+  ...import.meta.glob('../assets/media/cruises/*.jpg', { eager: true, import: 'default' }),
+  ...import.meta.glob('../assets/media/cruises/*.jpeg', { eager: true, import: 'default' }),
+  ...import.meta.glob('../assets/media/cruises/*.png', { eager: true, import: 'default' }),
+  ...import.meta.glob('../assets/media/cruises/*.webp', { eager: true, import: 'default' }),
+  ...import.meta.glob('../assets/media/cruises/*.JPG', { eager: true, import: 'default' }),
+  ...import.meta.glob('../assets/media/cruises/*.JPEG', { eager: true, import: 'default' }),
+  ...import.meta.glob('../assets/media/cruises/*.PNG', { eager: true, import: 'default' }),
+  ...import.meta.glob('../assets/media/cruises/*.WEBP', { eager: true, import: 'default' })
+}
+
 export const heroPhotos = sortedUrls(heroModules)
 
 /** Prefer this file when present; otherwise first hero image */
@@ -109,9 +121,9 @@ export const heroPhoto = resolveHeroPreferred()
 
 /** About mosaic slot order: left tall cell, top-right square, bottom wide */
 const ABOUT_MOSAIC_FILENAMES = [
-  'tall_photo.jpg',
-  'square_photo_1.jpg',
-  'square_photo_2.jpg'
+  'Kahikinui Station Joel Mos House.jpg',
+  'planet_presentation_square.jpg',
+  'hcc2024_square.png'
 ]
 
 function resolveAboutUrl (basename) {
@@ -170,5 +182,20 @@ export function resolveProjectImage (basename) {
     return null
   }
   const mod = projectModules[key]
+  return typeof mod === 'string' ? mod : mod.default
+}
+
+/** Resolve optional cruise image basename → bundled URL (or null) */
+export function resolveCruiseImage (basename) {
+  if (!basename) return null
+  const key = Object.keys(cruiseModules).find((p) => {
+    const normalized = p.replace(/\\/g, '/')
+    return normalized.endsWith('/' + basename) || normalized.endsWith(basename)
+  })
+  if (!key) {
+    console.warn(`[media] cruises image not found: ${basename}`)
+    return null
+  }
+  const mod = cruiseModules[key]
   return typeof mod === 'string' ? mod : mod.default
 }
