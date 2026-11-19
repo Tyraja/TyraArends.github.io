@@ -80,7 +80,13 @@
           >
             <q-icon name="mdi-school-outline" size="20px" />
           </a>
-          <a :href="personal.linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a
+            v-if="personal.linkedin"
+            :href="personal.linkedin"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
             <q-icon name="mdi-linkedin" size="20px" />
           </a>
           <a :href="'mailto:' + personal.email" aria-label="Email">
@@ -114,6 +120,7 @@ const navLinks = [
   { id: 'experience', label: 'Employment' },
   { id: 'publications', label: 'Publications' },
   { id: 'projects', label: 'Projects' },
+  { id: 'cruises', label: 'Cruises' },
   { id: 'education', label: 'Education' },
   { id: 'gallery', label: 'Field' },
   { id: 'contact', label: 'Contact' }
