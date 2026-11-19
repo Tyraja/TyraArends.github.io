@@ -1,3 +1,4 @@
+vue
 <template>
   <section id="experience" class="section-block section-ink experience-section">
     <div class="site-wrap">
@@ -128,15 +129,15 @@ const canToggleExperience = computed(() => {
   grid-template-columns: minmax(9rem, 12rem) 1fr;
   gap: 1.25rem 2rem;
   padding: 1.65rem 0;
-  border-top: 1px solid rgba(238, 244, 242, 0.12);
+  border-top: 1px solid rgba(250, 247, 245, 0.14);
   transition: background 0.25s ease;
 
   &:last-child {
-    border-bottom: 1px solid rgba(238, 244, 242, 0.12);
+    border-bottom: 1px solid rgba(250, 247, 245, 0.14);
   }
 
   &:hover {
-    background: rgba(238, 244, 242, 0.04);
+    background: rgba(142, 173, 191, 0.08);
   }
 
   @media (max-width: 700px) {
@@ -148,7 +149,7 @@ const canToggleExperience = computed(() => {
 .role-when {
   font-size: 0.8rem;
   letter-spacing: 0.03em;
-  color: #c4a574;
+  color: #D69AA6;
   padding-top: 0.35rem;
 }
 
@@ -157,7 +158,7 @@ const canToggleExperience = computed(() => {
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.2;
-  color: #f4faf8;
+  color: #FAF7F5;
   margin: 0 0 0.35rem;
 }
 
@@ -165,13 +166,13 @@ const canToggleExperience = computed(() => {
   margin: 0;
   font-size: 1.02rem;
   font-weight: 600;
-  color: #9fd4cb;
+  color: #8EADBF;
 }
 
 .role-location {
   margin: 0.35rem 0 0;
   font-size: 0.76rem;
-  color: rgba(238, 244, 242, 0.5);
+  color: rgba(250, 247, 245, 0.58);
 }
 
 .role-bullets {
@@ -186,7 +187,7 @@ const canToggleExperience = computed(() => {
   margin-bottom: 0.55rem;
   font-size: 0.98rem;
   line-height: 1.7;
-  color: rgba(238, 244, 242, 0.82);
+  color: rgba(250, 247, 245, 0.86);
 
   &::before {
     content: '';
@@ -195,7 +196,7 @@ const canToggleExperience = computed(() => {
     top: 0.65em;
     width: 6px;
     height: 2px;
-    background: #c4a574;
+    background: #D69AA6;
   }
 }
 
@@ -208,9 +209,9 @@ const canToggleExperience = computed(() => {
 
 .cite-chip {
   appearance: none;
-  border: 1px solid rgba(196, 165, 116, 0.45);
-  background: rgba(196, 165, 116, 0.12);
-  color: #e8d2a8;
+  border: 1px solid rgba(214, 154, 166, 0.5);
+  background: rgba(214, 154, 166, 0.14);
+  color: #F0C4CE;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.72rem;
   font-weight: 500;
@@ -221,9 +222,9 @@ const canToggleExperience = computed(() => {
   transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
 
   &:hover {
-    background: rgba(196, 165, 116, 0.22);
-    border-color: #c4a574;
-    color: #f4faf8;
+    background: rgba(214, 154, 166, 0.26);
+    border-color: #D69AA6;
+    color: #FAF7F5;
     transform: translateY(-1px);
   }
 }
@@ -231,9 +232,9 @@ const canToggleExperience = computed(() => {
 .expand-btn {
   display: inline-flex;
   align-items: center;
-  border: 1px solid rgba(196, 165, 116, 0.4);
+  border: 1px solid rgba(214, 154, 166, 0.5);
   background: transparent;
-  color: #c4a574;
+  color: #F0C4CE;
   border-radius: 6px;
   padding: 10px 18px;
   font-size: 0.8rem;
@@ -241,8 +242,8 @@ const canToggleExperience = computed(() => {
   transition: all 0.2s ease;
 
   &:hover {
-    border-color: #c4a574;
-    background: rgba(196, 165, 116, 0.08);
+    border-color: #D69AA6;
+    background: rgba(214, 154, 166, 0.12);
   }
 }
 </style>
