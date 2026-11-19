@@ -1,3 +1,4 @@
+
 <template>
   <section id="projects" class="section-block section-light">
     <div class="site-wrap">
@@ -12,12 +13,17 @@
           class="project-item"
         >
           <div class="project-meta font-mono">{{ project.dates }}</div>
+
           <div class="project-body">
             <h3 class="font-display project-title">
               {{ project.title }}
-              <span v-if="project.subtitle" class="project-sub"> — {{ project.subtitle }}</span>
+              <span v-if="project.subtitle" class="project-sub">
+                — {{ project.subtitle }}
+              </span>
             </h3>
+
             <p class="project-desc">{{ project.description }}</p>
+
             <div v-if="project.cites?.length" class="cite-row">
               <button
                 v-for="cite in project.cites"
@@ -30,9 +36,17 @@
                 {{ citeLabel(cite) }}
               </button>
             </div>
+
             <div class="row q-gutter-sm q-mt-sm">
-              <span v-for="tag in project.tags" :key="tag" class="tech-tag">{{ tag }}</span>
+              <span
+                v-for="tag in project.tags"
+                :key="tag"
+                class="tech-tag"
+              >
+                {{ tag }}
+              </span>
             </div>
+
             <button
               v-if="projectImage(project)"
               type="button"
@@ -44,8 +58,11 @@
                 :src="projectImage(project)"
                 :alt="`Poster for ${project.title}`"
               />
-              <span class="project-poster-hint font-mono">View poster</span>
+              <span class="project-poster-hint font-mono">
+                View poster
+              </span>
             </button>
+
             <div v-if="githubLinks(project).length" class="project-links">
               <a
                 v-for="link in githubLinks(project)"
@@ -56,7 +73,11 @@
                 class="project-link font-mono"
               >
                 {{ link.label }}
-                <q-icon name="mdi-arrow-top-right" size="14px" class="q-ml-xs" />
+                <q-icon
+                  name="mdi-arrow-top-right"
+                  size="14px"
+                  class="q-ml-xs"
+                />
               </a>
             </div>
           </div>
@@ -64,14 +85,27 @@
       </div>
 
       <div v-if="canToggleProjects" class="row justify-center q-mt-xl">
-        <button type="button" class="expand-btn font-mono" @click="expanded = !expanded">
+        <button
+          type="button"
+          class="expand-btn font-mono"
+          @click="expanded = !expanded"
+        >
           {{ expanded ? 'Show fewer projects' : 'Show all projects' }}
-          <q-icon :name="expanded ? 'mdi-chevron-up' : 'mdi-chevron-down'" size="18px" class="q-ml-xs" />
+          <q-icon
+            :name="expanded ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+            size="18px"
+            class="q-ml-xs"
+          />
         </button>
       </div>
     </div>
 
-    <q-dialog v-model="posterOpen" maximized transition-show="fade" transition-hide="fade">
+    <q-dialog
+      v-model="posterOpen"
+      maximized
+      transition-show="fade"
+      transition-hide="fade"
+    >
       <div class="poster-backdrop flex flex-center" @click="posterOpen = false">
         <q-btn
           flat
@@ -83,6 +117,7 @@
           class="poster-close"
           @click.stop="posterOpen = false"
         />
+
         <img
           v-if="activePoster"
           :src="activePoster.src"
@@ -125,21 +160,25 @@ function openPoster (project) {
   posterOpen.value = true
 }
 
-/** Normalize `github` (string) or `githubs` (string[] / {label,url}[]) into link chips. */
 function githubLinks (project) {
   const raw = project.githubs ?? project.github
   if (!raw) return []
+
   const list = Array.isArray(raw) ? raw : [raw]
+
   return list
     .map((item) => {
       if (!item) return null
+
       if (typeof item === 'string') {
         const name = item.replace(/\/$/, '').split('/').pop() || 'GitHub'
         return { label: name, url: item }
       }
+
       if (item.url) {
         return { label: item.label || 'GitHub', url: item.url }
       }
+
       return null
     })
     .filter(Boolean)
@@ -170,10 +209,10 @@ function goToPub (cite) {
   grid-template-columns: minmax(7rem, 9rem) 1fr;
   gap: 1rem 1.75rem;
   padding: 1.5rem 0;
-  border-top: 1px solid rgba(12, 44, 52, 0.1);
+  border-top: 1px solid rgba(23, 59, 87, 0.12);
 
   &:last-child {
-    border-bottom: 1px solid rgba(12, 44, 52, 0.1);
+    border-bottom: 1px solid rgba(23, 59, 87, 0.12);
   }
 
   @media (max-width: 600px) {
@@ -184,7 +223,7 @@ function goToPub (cite) {
 
 .project-meta {
   font-size: 0.76rem;
-  color: #5c736e;
+  color: #52758B;
   padding-top: 0.35rem;
 }
 
@@ -192,21 +231,21 @@ function goToPub (cite) {
   font-size: clamp(1.1rem, 2.2vw, 1.35rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: #0c2c34;
+  color: #173B57;
   margin: 0 0 0.5rem;
   line-height: 1.25;
 }
 
 .project-sub {
   font-weight: 500;
-  color: #2a7a6e;
+  color: #D69AA6;
 }
 
 .project-desc {
   margin: 0;
   font-size: 0.98rem;
   line-height: 1.7;
-  color: #3d524e;
+  color: #38566B;
   max-width: 46rem;
 }
 
@@ -219,9 +258,9 @@ function goToPub (cite) {
 
 .cite-chip {
   appearance: none;
-  border: 1px solid rgba(42, 122, 110, 0.3);
-  background: rgba(42, 122, 110, 0.08);
-  color: #2a7a6e;
+  border: 1px solid rgba(214, 154, 166, 0.7);
+  background: #F2DDE0;
+  color: #173B57;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.72rem;
   font-weight: 500;
@@ -232,8 +271,8 @@ function goToPub (cite) {
   transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
 
   &:hover {
-    background: rgba(42, 122, 110, 0.16);
-    border-color: rgba(42, 122, 110, 0.5);
+    background: #EACBD2;
+    border-color: #D69AA6;
     transform: translateY(-1px);
   }
 }
@@ -243,10 +282,10 @@ function goToPub (cite) {
   display: block;
   margin-top: 1rem;
   padding: 0;
-  border: 1px solid rgba(12, 44, 52, 0.12);
+  border: 1px solid rgba(23, 59, 87, 0.12);
   border-radius: 10px;
   overflow: hidden;
-  background: #eef4f2;
+  background: #FAF7F5;
   max-width: min(100%, 22rem);
   cursor: pointer;
   text-align: left;
@@ -259,9 +298,9 @@ function goToPub (cite) {
   }
 
   &:hover {
-    border-color: rgba(42, 122, 110, 0.45);
+    border-color: #D69AA6;
     transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(12, 44, 52, 0.12);
+    box-shadow: 0 10px 28px rgba(23, 59, 87, 0.12);
   }
 }
 
@@ -269,8 +308,8 @@ function goToPub (cite) {
   display: block;
   padding: 0.55rem 0.75rem;
   font-size: 0.72rem;
-  color: #5c736e;
-  background: rgba(255, 255, 255, 0.65);
+  color: #426F8C;
+  background: #F2DDE0;
 }
 
 .project-links {
@@ -285,20 +324,20 @@ function goToPub (cite) {
   align-items: center;
   font-size: 0.78rem;
   font-weight: 500;
-  color: #1a6fb5 !important;
+  color: #426F8C !important;
   text-decoration: none;
 
   &:hover {
-    color: #0c2c34 !important;
+    color: #D69AA6 !important;
   }
 }
 
 .expand-btn {
   display: inline-flex;
   align-items: center;
-  border: 1px solid rgba(42, 122, 110, 0.35);
-  background: transparent;
-  color: #2a7a6e;
+  border: 1px solid #D69AA6;
+  background: #F2DDE0;
+  color: #173B57;
   border-radius: 6px;
   padding: 10px 18px;
   font-size: 0.8rem;
@@ -306,13 +345,13 @@ function goToPub (cite) {
   transition: all 0.2s ease;
 
   &:hover {
-    border-color: #2a7a6e;
-    background: rgba(42, 122, 110, 0.08);
+    border-color: #426F8C;
+    background: #EACBD2;
   }
 }
 
 .poster-backdrop {
-  background: rgba(12, 44, 52, 0.96);
+  background: rgba(23, 59, 87, 0.96);
   width: 100%;
   height: 100%;
   position: relative;
