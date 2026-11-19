@@ -107,7 +107,7 @@ export const projects = [
     subtitle: 'Demographic structure and species verification',
     description:
       'Research on the demographic structure of the coral Leptastrea purpurea in Kāneohe Bay and verification of the species, presented at regional and international symposia.',
-    cites: ['C1', 'C4'],
+    cites: ['C1', 'C2', 'C3','C4', 'C5', 'C6','C7', 'C8', 'C9',],
     tags: ['Coral ecology', 'Kāneohe Bay', 'Species verification'],
     dates: '2022 \u2014 2025'
   }
@@ -124,7 +124,7 @@ export const cruises = [
     days: 45,
     vessel: 'R/V Thomas G. Thompson',
     description:
-      'This cruise set out to understand the ventalation propperties of the Kermadec trench offshore of New Zealand. This included collaborations from the University of Hawaiʻi, University of Rhode Island, and Woods Hole Oceanographic Institution. My role on this cruise was to help prepare the Hadal water column profiler, collect and filter Seawater for eDNA, and collect shipboard acoustics scientific acoustics from an EK80 system across 5 independant frequencies. I am hoping to use the data collected during my PhD',
+      'This cruise set out to understand the ventalation propperties of the Kermadec trench offshore of New Zealand. This included collaborations from the University of Hawaiʻi, University of Rhode Island, and Woods Hole Oceanographic Institution. My role on this cruise was to help prepare the Hadal Water Column Profiler, collect and filter Seawater for eDNA, and collect shipboard acoustics from an EK80 system across 5 independant frequencies. I am hoping to use the data collected during my PhD',
     tags: ['Hadal', 'eDNA', 'Acoustics'],
     image: 'kermadec_2025.jpg'
   },
@@ -132,7 +132,7 @@ export const cruises = [
     title: 'Hadal Water Column Profiler Testing Cruise',
     year: '2025',
     days: 3,
-    description: 'This was a HWCP Testing cruise as well as a SOEST Student cruise. Here, I helped prepare and launch the HWCP and opperate the CTD rosette. The Deep Sea Fish Ecology Lab used a micronekton net to sample mesopelagic Micronekton - which meant that i got to hold some of the critters that I have been studying through my M.S, like this cool sergestid shrimp! I also got to watch him produce a bioluminescent ooze. So Cool!',
+    description: 'This was a HWCP Testing cruise as well as a SOEST Student cruise. Here, I helped prepare and launch the HWCP and opperate the CTD rosette. The Deep Sea Fish Ecology Lab used a micronekton net to sample mesopelagic Micronekton - which meant that I got to hold some of the critters that I have been studying through my M.S, like this cool sergestid shrimp! I also got to watch him produce a bioluminescent ooze. So Cool!',
     tags: ['Profiler testing'],
     image: 'testing_2025.jpg'
   },
@@ -178,13 +178,14 @@ export const cruises = [
   }
 ]
 
+
 /** Multiple degrees (newest / highest first) */
 export const educationDegrees = [
   {
     school: 'University of Hawaiʻi at Mānoa',
     location: 'Honolulu, HI',
     degree: 'M.S. Biological Oceanography',
-    dates: '2025 \u2014 Present',
+    dates: '2025 — Present',
     status: 'Expected May 2027',
     detailLabel: 'Lab',
     detail: 'Deep Sea Fish Ecology Lab (advisor: Jeff Drazen) · Hauʻoli Mau Loa Fellow'
@@ -193,11 +194,12 @@ export const educationDegrees = [
     school: 'University of Hawaiʻi at Mānoa',
     location: 'Honolulu, HI',
     degree: 'B.S. Global Environmental Science — Honors, Cum Laude',
-    dates: '2022 \u2014 2025',
-    detailLabel: 'Pathway',
-    detail: 'Computer programming'
+    dates: '2022 — 2025',
+    detailLabel: 'Lab',
+    detail: 'ToBo Lab & Coral Nursery, Hawaiʻi Institute of Marine Biology'
   }
 ]
+
 
 /**
  * Journal articles — newest first.
