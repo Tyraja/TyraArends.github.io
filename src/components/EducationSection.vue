@@ -37,17 +37,17 @@
             <q-card-section class="q-pa-lg">
               <div class="row items-center q-mb-sm">
                 <q-icon name="mdi-account-group-outline" color="primary" size="22px" class="q-mr-sm" />
-                <span class="font-display text-subtitle1 text-white text-weight-bold">Leadership</span>
+                <span class="font-display text-subtitle1 text-weight-bold edu-card-heading">Leadership</span>
               </div>
-              <div class="text-white text-weight-medium q-mb-xs">{{ leadership.title }}</div>
-              <div class="font-mono text-grey-6 text-caption q-mb-sm">{{ leadership.dates }}</div>
+              <div class="edu-card-title text-weight-medium q-mb-xs">{{ leadership.title }}</div>
+              <div class="font-mono edu-muted text-caption q-mb-sm">{{ leadership.dates }}</div>
               <div
                 v-for="(bullet, i) in leadership.bullets"
                 :key="i"
                 class="row no-wrap q-mb-xs"
               >
-                <span class="text-primary q-mr-sm" style="flex-shrink: 0; margin-top: 2px">&#9656;</span>
-                <span class="text-grey-4" style="font-size: 0.85rem; line-height: 1.65">{{ bullet }}</span>
+                <span class="edu-bullet q-mr-sm" style="flex-shrink: 0; margin-top: 2px">&#9656;</span>
+                <span class="edu-description" style="font-size: 0.85rem; line-height: 1.65">{{ bullet }}</span>
               </div>
             </q-card-section>
           </q-card>
@@ -57,8 +57,8 @@
           <q-card class="glass-card full-height">
             <q-card-section class="q-pa-lg">
               <div class="row items-center q-mb-md">
-                <q-icon name="mdi-trophy-outline" color="warning" size="22px" class="q-mr-sm" />
-                <span class="font-display text-subtitle1 text-weight-bold">Honors & awards</span>
+                <q-icon name="mdi-trophy-outline" color="secondary" size="22px" class="q-mr-sm" />
+                <span class="font-display text-subtitle1 text-weight-bold edu-card-heading">Honors & awards</span>
               </div>
 
               <div
@@ -71,10 +71,10 @@
               </div>
 
               <template v-if="affiliations.length">
-                <q-separator dark class="q-mb-md" style="opacity: 0.7" />
+                <q-separator class="q-mb-md edu-separator" style="opacity: 0.7" />
                 <div v-for="aff in affiliations" :key="aff" class="row items-center q-mb-xs">
                   <q-icon name="mdi-chevron-right" color="primary" size="16px" class="q-mr-xs" />
-                  <span class="text-grey-4" style="font-size: 0.88rem">{{ aff }}</span>
+                  <span class="edu-description" style="font-size: 0.88rem">{{ aff }}</span>
                 </div>
               </template>
             </q-card-section>
@@ -96,14 +96,14 @@ import {
 
 <style lang="scss" scoped>
 .edu-school {
-  color: #0c2c34;
+  color: #173B57;
 }
 
 .edu-degree {
   font-size: 1.02rem;
   font-weight: 600;
   margin-top: 4px;
-  color: #2a7a6e;
+  color: #426F8C;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -115,16 +115,18 @@ import {
   font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #8a6a3d;
-  background: rgba(196, 165, 116, 0.22);
-  border: 1px solid rgba(196, 165, 116, 0.45);
+  color: #B76580;
+  background: rgba(214, 154, 166, 0.16);
+  border: 1px solid rgba(214, 154, 166, 0.45);
   border-radius: 999px;
   padding: 3px 9px;
 }
 
 .edu-loc,
-.edu-dates {
-  color: #5c736e;
+.edu-dates,
+.edu-muted,
+.edu-honor-meta {
+  color: #71869A;
 }
 
 .edu-dates {
@@ -132,24 +134,40 @@ import {
 }
 
 .edu-label {
-  color: #2a7a6e;
+  color: #426F8C;
 }
 
 .edu-detail {
   font-size: 0.95rem;
   line-height: 1.7;
-  color: #3d524e;
+  color: #465C70;
 }
 
 .edu-card {
-  border-left: 4px solid #2a7a6e !important;
+  border-left: 4px solid #426F8C !important;
+}
+
+.edu-card-heading {
+  color: #173B57;
+}
+
+.edu-card-title {
+  color: #426F8C;
+}
+
+.edu-description {
+  color: #465C70;
+}
+
+.edu-bullet {
+  color: #C77991;
 }
 
 .edu-honor-title {
-  color: #0c2c34;
+  color: #173B57;
 }
 
-.edu-honor-meta {
-  color: #5c736e;
+.edu-separator {
+  color: rgba(66, 111, 140, 0.25);
 }
 </style>
