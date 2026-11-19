@@ -4,7 +4,7 @@
  * Each import.meta.glob MUST use a string literal (Vite limitation).
  */
 
-import cvPdfAsset from '../assets/media/cv/Nicolow_Joel_CV.pdf?url'
+import cvPdfAsset from '../assets/media/cv/Tyra_Arends_CV.pdf?url'
 
 /** Resolved URL to the CV PDF (bundled by Vite) */
 export const cvPdfUrl = cvPdfAsset
@@ -109,9 +109,9 @@ export const heroPhoto = resolveHeroPreferred()
 
 /** About mosaic slot order: left tall cell, top-right square, bottom wide */
 const ABOUT_MOSAIC_FILENAMES = [
-  'Kahikinui Station Joel Mos House.jpg',
-  'planet_presentation_square.jpg',
-  'hcc2024_square.png'
+  'tall_photo.jpg',
+  'square_photo_1.jpg',
+  'square_photo_2.jpg'
 ]
 
 function resolveAboutUrl (basename) {
