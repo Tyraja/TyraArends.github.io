@@ -1,3 +1,4 @@
+
 <template>
   <section id="about" class="section-block section-light">
     <div class="site-wrap">
@@ -20,8 +21,12 @@
               :key="i"
               class="about-stat"
             >
-              <div class="about-stat-value font-display text-primary">{{ stat.value }}</div>
-              <div class="about-stat-label text-grey-6 font-mono">{{ stat.label }}</div>
+              <div class="about-stat-value font-display text-primary">
+                {{ stat.value }}
+              </div>
+              <div class="about-stat-label text-grey-6 font-mono">
+                {{ stat.label }}
+              </div>
             </div>
           </div>
         </div>
@@ -38,6 +43,7 @@
               />
               <div v-else class="mosaic-placeholder" aria-hidden="true" />
             </div>
+
             <div class="mosaic-square mosaic-cell">
               <q-img
                 v-if="mosaicSlots[1]"
@@ -48,6 +54,7 @@
               />
               <div v-else class="mosaic-placeholder" aria-hidden="true" />
             </div>
+
             <div class="mosaic-wide mosaic-cell">
               <q-img
                 v-if="mosaicSlots[2]"
@@ -84,22 +91,22 @@ const mosaicSlots = computed(() => {
 .about-text {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: #3d524e;
+  color: #38566B;
 
   :deep(strong) {
-    color: #0c2c34;
+    color: #173B57;
     font-weight: 700;
   }
 }
 
 .about-stat {
   padding: 12px 18px;
-  border-left: 3px solid #2a7a6e;
+  border-left: 3px solid #D69AA6;
 
   &-value {
     font-size: 1.05rem;
     font-weight: 700;
-    color: #2a7a6e;
+    color: #426F8C;
   }
 
   &-label {
@@ -107,7 +114,7 @@ const mosaicSlots = computed(() => {
     letter-spacing: 0.06em;
     text-transform: uppercase;
     margin-top: 2px;
-    color: #5c736e;
+    color: #52758B;
   }
 }
 
@@ -124,11 +131,11 @@ const mosaicSlots = computed(() => {
   position: relative;
   overflow: hidden;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 24px rgba(23, 59, 87, 0.12);
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 12px 36px rgba(23, 59, 87, 0.18);
   }
 }
 
@@ -168,7 +175,7 @@ const mosaicSlots = computed(() => {
   width: 100%;
   height: 100%;
   min-height: 80px;
-  background: rgba(53, 84, 49, 0.22);
-  border: 1px dashed rgba(240, 211, 160, 0.18);
+  background: rgba(142, 173, 191, 0.25);
+  border: 1px dashed rgba(214, 154, 166, 0.55);
 }
 </style>
