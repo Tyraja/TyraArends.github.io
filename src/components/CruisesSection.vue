@@ -3,7 +3,7 @@ vue
   <section id="cruises" class="section-block section-light">
     <div class="site-wrap">
       <h2 class="section-title">
-        Research Cruises
+        Research Excursions
       </h2>
       <p class="cruise-total font-mono">
         {{ totalDays }} days at sea · {{ cruises.length }} cruises
