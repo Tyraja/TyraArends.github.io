@@ -1,4 +1,4 @@
-vue
+
 <template>
   <section id="cruises" class="section-block section-light">
     <div class="site-wrap">
