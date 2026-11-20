@@ -102,6 +102,17 @@ const cruiseModules = {
   ...import.meta.glob('../assets/media/cruises/*.WEBP', { eager: true, import: 'default' })
 }
 
+/** Optional press/media thumbnails */
+const pressModules = {
+  ...import.meta.glob('../assets/media/press/*.jpg', { eager: true, import: 'default' }),
+  ...import.meta.glob('../assets/media/press/*.jpeg', { eager: true, import: 'default' }),
+  ...import.meta.glob('../assets/media/press/*.png', { eager: true, import: 'default' }),
+  ...import.meta.glob('../assets/media/press/*.webp', { eager: true, import: 'default' }),
+  ...import.meta.glob('../assets/media/press/*.JPG', { eager: true, import: 'default' }),
+  ...import.meta.glob('../assets/media/press/*.JPEG', { eager: true, import: 'default' }),
+  ...import.meta.glob('../assets/media/press/*.PNG', { eager: true, import: 'default' }),
+  ...import.meta.glob('../assets/media/press/*.WEBP', { eager: true, import: 'default' })
+}
 export const heroPhotos = sortedUrls(heroModules)
 
 /** Prefer this file when present; otherwise first hero image */
@@ -197,5 +208,23 @@ export function resolveCruiseImage (basename) {
     return null
   }
   const mod = cruiseModules[key]
+  return typeof mod === 'string' ? mod : mod.default
+}
+
+/** Resolve optional press image basename → bundled URL (or null) */
+export function resolvePressImage (basename) {
+  if (!basename) return null
+
+  const key = Object.keys(pressModules).find((p) => {
+    const normalized = p.replace(/\\/g, '/')
+    return normalized.endsWith('/' + basename) || normalized.endsWith(basename)
+  })
+
+  if (!key) {
+    console.warn(`[media] press image not found: ${basename}`)
+    return null
+  }
+
+  const mod = pressModules[key]
   return typeof mod === 'string' ? mod : mod.default
 }
