@@ -120,9 +120,10 @@ const navLinks = [
   { id: 'experience', label: 'Employment' },
   { id: 'publications', label: 'Publications' },
   { id: 'projects', label: 'Projects' },
-  { id: 'cruises', label: 'Cruises' },
+  { id: 'cruises', label: 'Excursions' },
   { id: 'education', label: 'Education' },
   { id: 'gallery', label: 'Field' },
+  { id: 'press', label: 'Media' },
   { id: 'contact', label: 'Contact' }
 ]
 
