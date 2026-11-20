@@ -219,6 +219,7 @@ export const press = [
     outlet: 'University of Hawaiʻi System News',
     date: 'Oct 20, 2026',
     link: 'https://www.hawaii.edu/news/2026/10/20/students-explore-arctic-japan/',
+    image: 'arctic_japan.jpg',
     description:
       'Coverage of the UH Mānoa and Hokkaido University exchange, including a week at the Hakodate Field Campus and Usujiri Field Station studying coastal environmental challenges.'
   },
@@ -228,6 +229,7 @@ export const press = [
     outlet: 'Uehiro Laboratory for Oceanography, Hokkaido University',
     date: 'Sep 16, 2026',
     link: 'https://ulo.fish.hokudai.ac.jp/news-en/20260916e.html',
+    image: 'usujiri_course.jpg',
     description:
       'Personal reflections on the Usujiri field course, coastal ecology, and cultural perspectives.'
   },
@@ -237,6 +239,7 @@ export const press = [
     outlet: 'Uehiro Laboratory for Oceanography, Hokkaido University',
     date: 'Aug 16, 2026',
     link: 'https://ulo.fish.hokudai.ac.jp/news-en/20260816e.html',
+    image: 'usujiri_fieldwork.jpg',
     description:
       'Day-by-day overview of the Usujiri field course, from orientation to final presentations.'
   },
@@ -246,6 +249,7 @@ export const press = [
     outlet: 'University of Hawaiʻi System News',
     date: 'May 29, 2025',
     link: 'https://www.hawaii.edu/news/2025/05/29/coral-research-inspires-environmental-science-grad/',
+    image: 'coral_research.jpg',
     description:
       'Feature on my undergraduate coral research at the Hawaiʻi Institute of Marine Biology and my transition to graduate school.'
   },
@@ -255,6 +259,7 @@ export const press = [
     outlet: 'YouTube',
     date: 'Telly Award winner',
     link: 'https://www.youtube.com/watch?v=e50HsKAsWtI',
+    image: 'voice_of_the_sea.jpg',
     description: 'Documentary on hadal science.'
   }
 ]
