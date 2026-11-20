@@ -5,10 +5,12 @@
       <h2 class="section-title">
         Research Excursions
       </h2>
+
       <p class="cruise-total font-mono">
         {{ totalDays }} days at sea · {{ cruises.length }} cruises
       </p>
 
+      <!-- Research cruises -->
       <div class="cruise-list">
         <article
           v-for="(cruise, i) in displayedCruises"
@@ -19,15 +21,32 @@
             <div>{{ cruise.year }}</div>
             <div v-if="cruise.days">{{ cruise.days }} days</div>
           </div>
+
           <div class="cruise-body">
             <h3 class="font-display cruise-title">
               {{ cruise.title }}
-              <span v-if="cruise.vessel" class="cruise-sub"> — {{ cruise.vessel }}</span>
+              <span v-if="cruise.vessel" class="cruise-sub">
+                — {{ cruise.vessel }}
+              </span>
             </h3>
-            <p class="cruise-desc">{{ cruise.description }}</p>
-            <div v-if="cruise.tags?.length" class="row q-gutter-sm q-mt-sm">
-              <span v-for="tag in cruise.tags" :key="tag" class="tech-tag">{{ tag }}</span>
+
+            <p class="cruise-desc">
+              {{ cruise.description }}
+            </p>
+
+            <div
+              v-if="cruise.tags?.length"
+              class="row q-gutter-sm q-mt-sm"
+            >
+              <span
+                v-for="tag in cruise.tags"
+                :key="tag"
+                class="tech-tag"
+              >
+                {{ tag }}
+              </span>
             </div>
+
             <button
               v-if="cruiseImage(cruise)"
               type="button"
@@ -39,22 +58,105 @@
                 :src="cruiseImage(cruise)"
                 :alt="`${cruise.title} ${cruise.year}`"
               />
-              <span class="cruise-photo-hint font-mono">View photo</span>
+              <span class="cruise-photo-hint font-mono">
+                View photo
+              </span>
             </button>
           </div>
         </article>
       </div>
 
+      <!-- Show more / fewer cruises -->
       <div v-if="canToggle" class="row justify-center q-mt-xl">
-        <button type="button" class="expand-btn font-mono" @click="expanded = !expanded">
+        <button
+          type="button"
+          class="expand-btn font-mono"
+          @click="expanded = !expanded"
+        >
           {{ expanded ? 'Show fewer cruises' : 'Show all cruises' }}
-          <q-icon :name="expanded ? 'mdi-chevron-up' : 'mdi-chevron-down'" size="18px" class="q-ml-xs" />
+          <q-icon
+            :name="expanded ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+            size="18px"
+            class="q-ml-xs"
+          />
         </button>
+      </div>
+
+      <!-- Featured Hakodate field course -->
+      <div class="field-course-block">
+        <div class="field-course-divider"></div>
+
+        <article class="cruise-item field-course-item">
+          <div class="cruise-meta font-mono">
+            <div>{{ fieldCourse.dates }}</div>
+            <div>Field course</div>
+          </div>
+
+          <div class="cruise-body">
+            <h3 class="font-display cruise-title">
+              {{ fieldCourse.title }}
+            </h3>
+
+            <div class="field-course-location">
+              {{ fieldCourse.location }}
+            </div>
+
+            <div v-if="fieldCourse.host" class="field-course-host">
+              {{ fieldCourse.host }}
+            </div>
+
+            <p
+              v-for="(para, i) in fieldCourse.blurb"
+              :key="i"
+              class="cruise-desc field-course-desc"
+            >
+              {{ para }}
+            </p>
+
+            <div
+              v-if="fieldCourse.tags?.length"
+              class="row q-gutter-sm q-mt-sm"
+            >
+              <span
+                v-for="tag in fieldCourse.tags"
+                :key="tag"
+                class="tech-tag"
+              >
+                {{ tag }}
+              </span>
+            </div>
+
+            <button
+              v-if="fieldCoursePhoto"
+              type="button"
+              class="cruise-photo"
+              aria-label="View Hakodate field course photo"
+              @click="openFieldCoursePhoto"
+            >
+              <img
+                :src="fieldCoursePhoto"
+                :alt="fieldCourse.title"
+              />
+              <span class="cruise-photo-hint font-mono">
+                View photo
+              </span>
+            </button>
+          </div>
+        </article>
       </div>
     </div>
 
-    <q-dialog v-model="photoOpen" maximized transition-show="fade" transition-hide="fade">
-      <div class="photo-backdrop flex flex-center" @click="photoOpen = false">
+    <!-- Enlarged photo viewer -->
+    <q-dialog
+      v-model="photoOpen"
+      maximized
+      transition-show="fade"
+      transition-hide="fade"
+    >
+      <div
+        class="photo-backdrop flex flex-center"
+        @click="photoOpen = false"
+      >
         <q-btn
           flat
           round
@@ -65,6 +167,7 @@
           class="photo-close"
           @click.stop="photoOpen = false"
         />
+
         <img
           v-if="activePhoto"
           :src="activePhoto.src"
@@ -79,17 +182,23 @@
 
 <script setup>
 import { computed, ref } from 'vue'
-import { cruises, cruiseSettings } from 'src/data/resume'
+
+import {
+  cruises,
+  cruiseSettings,
+  fieldCourse
+} from 'src/data/resume'
+
 import { resolveCruiseImage } from 'src/data/media'
 
 const expanded = ref(false)
 const photoOpen = ref(false)
 const activePhoto = ref(null)
 
-const cruiseLimit = cruiseSettings.collapsedCount ?? 4
+const cruiseLimit = cruiseSettings.collapsedCount ?? 2
 
 const totalDays = computed(() =>
-  cruises.reduce((sum, c) => sum + (c.days || 0), 0)
+  cruises.reduce((sum, cruise) => sum + (cruise.days || 0), 0)
 )
 
 const displayedCruises = computed(() => {
@@ -99,14 +208,35 @@ const displayedCruises = computed(() => {
 
 const canToggle = computed(() => cruises.length > cruiseLimit)
 
+const fieldCoursePhoto = computed(() =>
+  resolveCruiseImage(fieldCourse.image)
+)
+
 function cruiseImage (cruise) {
   return resolveCruiseImage(cruise.image)
 }
 
 function openPhoto (cruise) {
   const src = cruiseImage(cruise)
+
   if (!src) return
-  activePhoto.value = { src, alt: `${cruise.title} ${cruise.year}` }
+
+  activePhoto.value = {
+    src,
+    alt: `${cruise.title} ${cruise.year}`
+  }
+
+  photoOpen.value = true
+}
+
+function openFieldCoursePhoto () {
+  if (!fieldCoursePhoto.value) return
+
+  activePhoto.value = {
+    src: fieldCoursePhoto.value,
+    alt: fieldCourse.title
+  }
+
   photoOpen.value = true
 }
 </script>
@@ -183,7 +313,10 @@ function openPhoto (cruise) {
   max-width: min(100%, 22rem);
   cursor: pointer;
   text-align: left;
-  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 
   img {
     display: block;
@@ -225,6 +358,40 @@ function openPhoto (cruise) {
   }
 }
 
+/* Hakodate field course */
+.field-course-block {
+  margin-top: 2.5rem;
+}
+
+.field-course-divider {
+  height: 1px;
+  background: rgba(199, 121, 145, 0.45);
+  margin-bottom: 0.5rem;
+}
+
+.field-course-item {
+  border-top: none;
+}
+
+.field-course-location {
+  color: #c77991;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.field-course-host {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #71869a;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.field-course-desc {
+  margin-bottom: 0.75rem;
+}
+
+/* Enlarged photo viewer */
 .photo-backdrop {
   background: rgba(23, 59, 87, 0.97);
   width: 100%;
